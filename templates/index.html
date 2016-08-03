@@ -1,0 +1,16 @@
+<!DOWTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		{%for b in blocks%}
+		<div class="panel panel-default">
+			<a href="#" style="font-size:16px">{{b.name}}</a>
+			<span class="pull-right">{{b.manager}}</span>
+		</div>
+		<div class="panel-body">
+			{{b.desc}}
+		</div>
+		{%endfor%}
+	</body>
+</html>
