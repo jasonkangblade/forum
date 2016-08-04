@@ -1,16 +1,28 @@
-<!DOWTYPE html>
+<!DOCTYPE html>
 <html>
-	<head>
-	</head>
-	<body>
-		{%for b in blocks%}
-		<div class="panel panel-default">
-			<a href="#" style="font-size:16px">{{b.name}}</a>
-			<span class="pull-right">{{b.manager}}</span>
-		</div>
-		<div class="panel-body">
-			{{b.desc}}
-		</div>
-		{%endfor%}
-	</body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/static/css/bootstrap.css" rel="stylesheet" />
+        <title>Python部落</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron col-xs-12 col-md-12">
+                <center> <h1>Python部落论坛</h1></center>
+            </div>
+            </div>
+            {%for b in blocks%}
+            <div class="row">
+                <div class="panel panel-default col-xs-12 col-md-10">
+                    <a href="#" style="font-size:16px">{{b.name}}</a>
+                    <span class="pull-right">管理员ID:{{b.manager_name}}</span>
+                </div>
+                <div class="panel-body col-xs-12 col-md-10">
+                {{b.desc}}
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </body>
 </html>
