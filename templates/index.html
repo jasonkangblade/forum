@@ -1,37 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/static/css/bootstrap.css" rel="stylesheet" />
-        <title>Python部落</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="jumbotron col-xs-12 col-md-12">
-                <center> <h1>Python部落论坛</h1></center>
-            </div>
-            </div>
-            <div class="row">
-                <div class="panel panel-default pull-right col-xs-12 col-md-2">
-                    登录部分
-                </div>
-                {%for b in blocks%}
-                <div class="panel panel-default col-xs-12 col-md-10">
-                    <a href="#" style="font-size:16px">{{b.name}}</a>
-                    <span class="pull-right">管理员ID:{{b.manager_name}}</span>
-                </div>
-                <div class="panel-body col-xs-12 col-md-10">
-                    {{b.desc}}
-                </div>
-                {%endfor%}
-            </div>
-            <div class="row">
-                <blockquote class="blockquote-reverse col-xs-12 col-md-12">
-                      <p>Learning and Sport can make life more beautiful and more full.</p>
-                      <footer>Love momo's <cite title="Source Title">Kangj</cite></footer>
-                </blockquote>
-            </div>
-         </div>
-    </body>
-</html>
+{%extends "base.html"%}
+{%block content%}
+<div class="col-xs-12 col-md-10">
+    {%for b in blocks%}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="article/list/{{b.id}}" style="font-size:16px">{{b.name}}</a>
+            <span class="pull-right">管理员ID:{{b.manager_name}}</span>
+        </div>
+        <div class="panel-body">
+            {{b.desc}}
+        </div>
+    </div>
+    {%endfor%}
+</div>
+<div class="col-xs-12 col-md-2">
+    <div class="well">个人中心</div>
+</div>
+{%endblock%}
